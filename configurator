@@ -1,0 +1,4 @@
+# Configurator of main variables 
+INITIAL_LANGUAGE = ENG
+DATA_SOURCE = DSProdData
+DRIVER_DB = jdbc
