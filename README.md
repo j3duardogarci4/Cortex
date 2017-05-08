@@ -10,6 +10,8 @@ To Work with the tool is necessary:
 
 Files and porpouse of each one.
 
+- README.md                 This file
 - configuration_parameters  File with definition of variables to services
 - diagnostic_tool	          File which contains functions to check the proper functionality used by the application
 - main_cortex               File which contains the application functionalities.
+
