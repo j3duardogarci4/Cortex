@@ -3,4 +3,6 @@
 PORT_SERVER = 8980
 KEY_SECURITY = Ziklosl093lspesa22
 LOG_DIRECTORY = /home/operator/logCortex/node1
+SERVER_SECOND_REFRESH = 5
+
 
