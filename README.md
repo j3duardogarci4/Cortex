@@ -9,4 +9,7 @@ To Work with the tool is necessary:
   A Sim Card to use the service of twitter
 
 Files and porpouse of each one.
-- 
+
+- configuration_parameters  File with definition of variables to services
+- diagnostic_tool	          File which contains functions to check the proper functionality used by the application
+- main_cortex               File which contains the application functionalities.
