@@ -13,7 +13,7 @@ char   bufferRead;
 void setup(){
 
   Serial.begin(115200);  // Turn on serial monitor
-  GPS.begin(96000);     // Turn on GPS at 9600 baud 
+  GPS.begin(9600);     // Turn on GPS at 9600 baud 
   GPS.sendCommand("$PGCMD, 33,0*6D");   // Turn off antenna
   GPS.sendCommand(PMTK_SET_NMEA_UPDATE_1HZ);  // Set update rate to 1 hz
   GPS.sendCommand(PMTK_SET_NMEA_OUTPUT_RMCGGA); //Request RMC AND GCCA Sentence only
@@ -23,6 +23,7 @@ void setup(){
 
 void readGPS() {
 
+  clearGPSBuffer();
   while (!GPS.newNMEAreceived()){
      bufferRead = GPS.read();    
   }
@@ -32,17 +33,26 @@ void readGPS() {
   while (!GPS.newNMEAreceived()){
      bufferRead = GPS.read();    
   }
-  GPS.parse(GPS.lastNMEA());  // Parse last good NMEA sentence
+  GPS.parse(GPS.lastNMEA());  // Parse last good NMEA second sentence
   SentenceM2 = GPS.lastNMEA();
   
-  Serial.println(SentenceM1;
-  Serial.println(SentenceM2;
+  Serial.println(SentenceM1);
+  Serial.println(SentenceM2);
   
+  Serial.println("");
+
 }
 
+ void clearGPSBuffer(){  // Clear old and corrupt data from serial port 
+   while (!GPS.newNMEAreceived()){
+     bufferRead = GPS.read();    
+   }
+   GPS.parse(GPS.lastNMEA());   
+ }
+
 void loop() {
-   
-    readGPS();
+   readGPS();
+   delay(250);
 }
 
 
