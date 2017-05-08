@@ -23,13 +23,13 @@ void setup(){
 
 void readGPS() {
 
-  while (!GPS.newNMEAReceived()){
+  while (!GPS.newNMEAreceived()){
      bufferRead = GPS.read();    
   }
   GPS.parse(GPS.lastNMEA());  // Parse last good NMEA sentence
   SentenceM1 = GPS.lastNMEA();
   
-  while (!GPS.newNMEAReceived()){
+  while (!GPS.newNMEAreceived()){
      bufferRead = GPS.read();    
   }
   GPS.parse(GPS.lastNMEA());  // Parse last good NMEA sentence
